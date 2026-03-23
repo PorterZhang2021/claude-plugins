@@ -35,17 +35,23 @@ allowed-tools:
 
 ## 收尾规则
 
-**必须运行 `/task`（业务逻辑类）：** `feat` / `fix` / `refactor` / `test`
+**强制顺序：必须先写入 PLAN.md，再执行后续操作。**
 
-**可选运行 `/task`（其他类型）：** `docs` / `chore` / `style` / `perf` / `build` / `ci`
-
-PLAN.md 写完后询问用户：
+PLAN.md 写完后，询问用户：
 
 ```
+PLAN.md 已生成，路径：plan/<type>/<branch-name>/PLAN.md
+
 是否需要生成 TASK.md？
 
   y — 运行 /task 生成任务清单（改动较多时推荐）
   n — 直接运行 /execute（改动简单时可跳过）
 ```
+
+**禁止：** 未生成 PLAN.md 文件就直接执行变更或提交。
+
+**必须运行 `/task`（业务逻辑类）：** `feat` / `fix` / `refactor` / `test`
+
+**可选运行 `/task`（其他类型）：** `docs` / `chore` / `style` / `perf` / `build` / `ci`
 
 **通用：** 写入 PLAN.md 后提示使用 `/commit` 提交，完整链路：`/plan` → `(/task)` → `/execute` → `/commit` → `/merge-to-main`
