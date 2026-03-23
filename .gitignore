@@ -1,0 +1,6 @@
+# 敏感配置
+mcp/mcp-config.json
+.env
+
+# 系统文件
+.DS_Store
