@@ -249,3 +249,12 @@ Refs: RFC-6749, RFC-7636
 - The tool will intelligently detect when full style might be beneficial and suggest it
 - Always review the generated message before confirming
 - Pre-commit checks help maintain code quality
+
+## Next Steps
+
+After committing, choose based on your workflow:
+
+```
+/commit → /merge-to-main  # Merge directly to main (solo projects)
+/commit → /create-pr      # Push branch and open a PR (team review)
+```
