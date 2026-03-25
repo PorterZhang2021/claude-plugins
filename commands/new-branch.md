@@ -55,4 +55,9 @@ Supported types and their branch prefixes:
 
 5. **提示下一步：** 运行 `/plan` 开始规划，或如果已有 PLAN.md 直接运行 `/task` 生成任务清单。
 
-   **链路 2：** `/new-branch` → `/plan` → `/task` → `/execute` → `/commit` → `/merge-to-main`
+   完成开发后，根据场景选择收尾方式：
+
+   ```
+   /new-branch → /plan → /task → /execute → /commit → /merge-to-main  # 直接合并（个人项目）
+   /new-branch → /plan → /task → /execute → /commit → /create-pr       # 开 PR（需要 Review）
+   ```

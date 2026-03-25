@@ -54,4 +54,8 @@
 7. **确认结果**
    - 展示当前所在分支（应为 `<base>`）
    - 展示最新的 git log（最近 3 条）
-   - 如需开始新功能：`/new-branch <type> <name>` → `/plan` → `/task` → `/execute` → `/commit` → `/merge-to-main`
+   - 如需开始新功能，根据场景选择收尾方式：
+     ```
+     /new-branch → /plan → /task → /execute → /commit → /merge-to-main  # 直接合并（个人项目）
+     /new-branch → /plan → /task → /execute → /commit → /create-pr       # 开 PR（需要 Review）
+     ```
