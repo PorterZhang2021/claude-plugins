@@ -37,7 +37,9 @@ With options:
 
 ## What This Command Does
 
-1. **Consistency check** (unless `--no-verify`):
+1. **检查当前分支**：若在 `master` 分支上，立即终止并提示：`当前在 master 分支，请先运行 /new-branch 创建特性分支`
+
+2. **Consistency check** (unless `--no-verify`):
 
    Before staging anything, verify nothing was left behind:
 
@@ -50,7 +52,7 @@ With options:
    - **Plan/task sync** (only if a `plan/` directory exists in the project):
      - Do design decisions or approach changes from this session appear in `PLAN.md`?
      - Are all completed tasks marked `[x]` in `TASK.md`?
-     - If gaps found, prompt the user to backfill before committing.
+     - If gaps found, **automatically update** the files to reflect what was actually done — do NOT prompt the user to backfill manually.
 
 2. **Pre-commit checks** (unless `--no-verify`):
 

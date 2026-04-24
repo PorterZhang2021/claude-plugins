@@ -1,9 +1,9 @@
 # docs — 文档规划
 
-生成 `plan/docs/<branch-name>/PLAN.md`，逐节与用户确认：
+生成 `plan/docs/<branch-name>/PLAN.md`：
 
 1. **文档目标** — 面向谁，解决什么信息缺口
 2. **文档结构** — 章节大纲
 3. **内容来源** — 参考哪些现有代码/文档/设计
 
-收尾：询问用户是否需要生成 TASK.md（见 SKILL.md 收尾规则）
+收尾：提示下一步运行 `/execute` 或 `/task`

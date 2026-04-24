@@ -30,24 +30,22 @@ Help the user start a new Git branch following conventional naming.
 
 2. **Check current git status**. If there are uncommitted changes, warn the user and ask whether to continue anyway.
 
-3. **Create and switch to the branch**:
+3. **创建 worktree 并切换会话**（主目录保持在 master）：
+
+   直接调用 `EnterWorktree` 工具，传入 `name: "<type>/<name>"`，它会一步完成：
+   - 以 master HEAD 为基础创建新分支
+   - 在 `.claude/worktrees/<type>/<name>` 挂载独立 worktree
+   - 将当前会话工作目录切换到 worktree
+
+   进入后执行：
    ```bash
-   git checkout -b <type>/<name>
+   git branch -m <type>/<name>
    ```
+   确保分支名符合 `<type>/<name>` 命名规范（EnterWorktree 可能用随机名）。
 
-4. **Confirm success** and show:
-   - The current branch name
-   - Reminder to make small, atomic commits using `/commit`
-   - How to merge back when done:
-     ```bash
-     git checkout main
-     git merge <type>/<name>
-     git branch -d <type>/<name>
-     ```
+4. **确认成功** 并展示当前分支名，提醒使用 `/commit` 提交。
 
-5. **Suggest next steps**（根据分支类型）：
-
-   **feat/refactor/test/docs 等：**
+5. **下一步**（根据分支类型）：
    ```
    /plan → /task → /execute → /commit → /merge-to-main
    ```

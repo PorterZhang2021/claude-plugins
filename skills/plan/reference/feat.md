@@ -1,6 +1,6 @@
 # feat — 功能规划
 
-生成 `plan/feat/<branch-name>/PLAN.md`，逐节与用户确认：
+生成 `plan/feat/<branch-name>/PLAN.md`：
 
 1. **功能目标** — 一句话描述这个功能解决什么问题
 2. **技术选型** — 涉及的技术/库/外部服务

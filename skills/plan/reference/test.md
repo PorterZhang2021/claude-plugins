@@ -1,6 +1,6 @@
 # test — 测试规划
 
-生成 `plan/test/<branch-name>/PLAN.md`，逐节与用户确认：
+生成 `plan/test/<branch-name>/PLAN.md`：
 
 1. **测试目标** — 补充哪个模块/场景的测试，当前覆盖缺口在哪
 2. **测试类型** — 单元测试 / 集成测试 / 端到端测试

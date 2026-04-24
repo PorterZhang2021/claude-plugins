@@ -16,7 +16,7 @@
 
 ## 生成 PLAN.md
 
-生成 `plan/fix/<branch-name>/PLAN.md`，逐节与用户确认：
+生成 `plan/fix/<branch-name>/PLAN.md`：
 
 1. **Bug 描述** — 现象、触发条件、影响范围
    - 如果使用了 bug-analyzer，引用其分析结果

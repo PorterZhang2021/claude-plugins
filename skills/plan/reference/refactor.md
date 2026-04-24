@@ -1,6 +1,6 @@
 # refactor — 重构规划
 
-生成 `plan/refactor/<branch-name>/PLAN.md`，逐节与用户确认：
+生成 `plan/refactor/<branch-name>/PLAN.md`：
 
 1. **重构目标** — 当前问题是什么，重构后期望达到什么状态
 2. **影响范围** — 涉及的模块、文件、接口
