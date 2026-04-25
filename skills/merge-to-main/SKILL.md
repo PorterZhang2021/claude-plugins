@@ -21,24 +21,31 @@ allowed-tools:
    - 运行 `git status`
    - 如有未提交的变更，提示用户先使用 `/commit` 提交，终止流程
 
-3. **拉取远端并确保当前分支包含最新内容**
+3. **同步远端并确保当前分支包含本地 master 最新内容**
    - 先检测远端默认主分支名（main 或 master）：
      ```bash
      git remote show origin | grep 'HEAD branch' | awk '{print $NF}'
      ```
-   - 拉取远端最新状态（不更新本地指针）：
+   - 拉取远端最新状态：
      ```bash
      git fetch origin <base>
      ```
-   - 检查 `origin/<base>` 是否有当前分支不包含的提交：
+   - 将本地 master 同步到 `origin/<base>`（ff-only，保证安全）：
      ```bash
-     git log HEAD..origin/<base> --oneline
+     git -C $MAIN_REPO merge --ff-only origin/<base>
+     ```
+     - 成功 → 本地 master 已是最新
+     - 失败（本地 master 与远端分叉）→ 终止，提示用户：`本地 <base> 与 origin/<base> 已分叉，请先手动排查`
+
+   - 检查当前 feature 分支是否落后于本地 master：
+     ```bash
+     git log HEAD..<base> --oneline
      ```
    - 判断结果：
-     - **无输出**（当前分支已包含远端所有提交）→ 正常，继续执行
-     - **有输出**（远端领先）→ 将当前分支 rebase 到远端最新：
+     - **无输出**（feature 已包含 master 所有提交，纯 ahead）→ 继续执行
+     - **有输出**（feature 落后 master）→ rebase 到最新 master：
        ```bash
-       git rebase origin/<base>
+       git rebase <base>
        ```
        - rebase 成功 → 继续执行
        - rebase 有冲突 → 执行 `git rebase --abort`，终止并提示用户：`rebase 发生冲突，请手动解决后重新运行 /merge-to-main`
