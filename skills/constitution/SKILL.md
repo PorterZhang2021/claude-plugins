@@ -1,3 +1,8 @@
+---
+name: constitution
+description: 帮助用户为新项目结对编写开发宪法（constitution.md）
+---
+
 # Constitution Workshop
 
 帮助用户为新项目结对编写开发宪法（constitution.md）。

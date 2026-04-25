@@ -1,3 +1,8 @@
+---
+name: create-pr
+description: 将当前分支推送到远端并创建 Pull Request，适合需要 Code Review 的场景
+---
+
 # Create Pull Request
 
 将当前分支推送到远端并创建 Pull Request，适合需要 Code Review 的场景。

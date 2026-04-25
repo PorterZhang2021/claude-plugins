@@ -1,3 +1,8 @@
+---
+name: claude-md
+description: 帮助用户为新项目结对编写 CLAUDE.md 操作手册
+---
+
 # CLAUDE.md Workshop
 
 帮助用户为新项目结对编写 CLAUDE.md 操作手册。

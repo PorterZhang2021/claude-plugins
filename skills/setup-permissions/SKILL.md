@@ -1,3 +1,8 @@
+---
+name: setup-permissions
+description: 为当前项目结对配置 .claude/settings.json 权限规则
+---
+
 # Setup Permissions
 
 为当前项目结对配置 `.claude/settings.json` 权限规则。
